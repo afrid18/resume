@@ -1,2 +1,2 @@
 ### Afrid Hussain
-<hr>
+<hr />
