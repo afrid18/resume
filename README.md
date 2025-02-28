@@ -1,0 +1,1 @@
+- [ ] Write documentation (MacOS, Windows and Linux guides)

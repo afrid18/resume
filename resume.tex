@@ -13,7 +13,13 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+% \usepackage[pdftex]{hyperref}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    linkcolor = blue,
+    filecolor = magenta,
+    urlcolor = blue,
+}
 \usepackage{fancyhdr}
 
 
@@ -74,122 +80,131 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://afrid.in/}{\Large Afrid Hussain}} & Email :  \href{mailto:afridhussain.d@gmail.com}{afridhussain.d@gmail.com}\\
-  \href{https://www.linkedin.com/in/afridhussain/}{LinkedIn |} 
-  \href{https://github.com/afrid18/}{Github}& Mobile :  +91-703-237-6276 \\
+  \textbf{{\Large Afrid Hussain}} & Email: afridhussain.d@gmail.com\\
+  \href{https://www.linkedin.com/in/afridhussain/}{LinkedIn} \mathord{\cdot} \; \href{https://github.com/afrid18/}{Github} \; \mathord{\cdot} \; \href{https://afrid.in/}{Website}& Mobile: +91-7032376276 \\
 \end{tabular*}
 
-
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Sri Venkateswara college of Engineering and Technology}{Chittoor}
-      {B.Tech in Computer Science and Engineering;  GPA: 2.96 | 7.4/10 }{August 2019 - April 2023}
-    \resumeSubheading
-      {Narayana Jr. College}{Guntakal, India}
-      {Board of Intermediate Andhra Pradesh); 9.01 CGPA
-}{June 2017 - April 2019}
-  \resumeSubHeadingListEnd
-
 %--------PROGRAMMING SKILLS------------
-\section{Programming Skills}
- \resumeSubHeadingListStart
- \resumeSubItem{}{
-     \textbf{Languages}{: Python, Javascript, Typescript, Go, Java, C++, SQL, NoSQL, HTML, CSS/SASS }
-     }
- \resumeSubItem{}{
-	\textbf{Technologies and Frameworks}{: Linux System Administration, FastAPI(python), Blockchain  }
-    }
- \resumeSubHeadingListEnd
+% \section{Programming Skills}
+%  \resumeSubHeadingListStart
+%  \resumeSubItem{}{
+%      \textbf{Languages: }{Python, Javascript, Typescript, Go, Java, C++, SQL, NoSQL, HTML, CSS/SASS }
+%      }
+%  \resumeSubItem{}{
+% 	\textbf{Technologies and Frameworks: }{Linux System Administration, FastAPI(python), Blockchain  }
+%     }
+%  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Citicorp}{Chennai}
-      {Full Stack Developer - Full time}{July 2019 - Present}
+      {Initvalue Technologies Private Limited}{Bangalore, Karnataka}
+      {Software Engineer (Infrastructure) - Full time}{April 2024 - Present}
       \resumeItemListStart
         \resumeItem{}
-          {Part of the Citi Retail Services (CRS) Acquisitions team that serves over 35 partners in the NAM region. }
+          {Automated regular tasks like system health checks, \textbf{log management}, and backups using \textbf{Python scripts}, helping reduce manual work and making systems more reliable}
         \resumeItem{}
-        {Followed the Agile model and worked extensively in Angular, Java Springboot Microservices and PCF cloud technologies for deployment.}
+          {Set up \textbf{GitHub Actions workflows} to automate deployments, with \textbf{CRON jobs} scheduled for daily \textbf{infrastructure checks} and \textbf{performance reports} that get shared on Slack for team updates}
+        \resumeItem{}
+          {Configured and optimized Cloudflare’s WAF for application security, applying custom rules to block threats and safeguard against vulnerabilities.}
+        \resumeItem{}
+          {Configured \textbf{Cloudflare} for \textbf{secure access} and to optimize performance, setting up rules and policies to protect our applications from threats and ensure fast load times}
+        \resumeItem{}
+          {Used \textbf{Ansible} and \textbf{Terraform} to manage server configurations and \textbf{deploy infrastructure}, making it easier to set up consistent environments in both staging and production}
+        \resumeItem{}
+          {Supported deployment rollouts by troubleshooting issues during releases and being on-call to handle any urgent problems, helping keep services stable}
+        \resumeItem{}
+          {Built dashboards in Prometheus and Grafana to monitor systems in real time, and fine-tuned alerts so the team gets notified of any issues before they become big problems}
+        \resumeItem{}
+          {Conducted knowledge-sharing sessions with the team}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Hack For Social Good (SPI Cinemas)}{Chennai}
-      {UI/UX Analyst - Intern}{May 2018 - Jul 2018}
+      {Cognizant Technologies}{Coimbatore, Tamilnadu}
+      {Software Developer Intern}{Dec 2023 - Apr 2024}
       \resumeItemListStart
-      \resumeItem{}
-          {Part of the team of knowledge workers that brainstormed UI/UX Design ideas for aspiring startups.}
         \resumeItem{}
-          {Restructured the User Interface for their website using Bootstrap framework, CSS, HTML and Vanilla Javascript.}
+          {Configured \textbf{CloudWatch} alerts for CPU utilization and memory, promptly addressing critical performance issues}
+        \resumeItem{}
+          {Deployed and managed EC2 instances in AWS, enhancing application performance for health-related services.}
+        \resumeItem{}
+          {collaborated in troubleshooting application deployments, contributing to resolve infrastructure issues}
+        \resumeItem{}
+          {Collaborated with senior engineers in Agile sprints, contributing to continuous integration and delivery pipelines.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Kognify}{Chennai}
-      {Full Stack Developer - Intern}{Dec 2017 - Jan 2018}
+      {Google Summer of Code - OpenSUSE}{Remote}
+      {Open source mentorship}{May 2023 - Sep 2023}
       \resumeItemListStart
         \resumeItem{}
-          {Created an automation tool using Angular and Material Design concepts to generate responsive static websites from a JSON file.}
-         \resumeItem{}
-          {Worked on HTTP communications(REST) and AdonisJs at the back-end.}
-      \resumeItemListEnd
-     \resumeSubheading
-      {Check Health}{Chennai}
-      {Software Developer - Intern}{Jun 2017 - Jul 2017}
-      \resumeItemListStart
+          {Improved test suite for testing \href{https://github.com/rpm-software-management/rpmlint}{rpmlint repository} using pytest. Spent nearly 400+ hours on the project, with regular meetings with the mentor. Refer \href{https://summerofcode.withgoogle.com/archive/2023/projects/WxqvIPZs}{here} for more information about the project}
         \resumeItem{}
-          {Used Ionic framework to create the profile page section for their hybrid app.
-         }
-         \resumeItem{}
-          {Worked on Firebase for the back-end.}
+          {Designed a mocking framework which will help eliminate rpm binary files used the project just for unit testing}
+        \resumeItem{}
+          {Over \textbf{20+ rpm binary files} have been mocked using the framework I designed, using the same framework we can eliminate almost 90\% of existing binary packages, which is left for upcoming improvements}
+        \resumeItem{}
+          {Working organization is \href{https://opensuse.org/}{OpenSUSE}, SKILLS: \textbf{Python}, \textbf{Testing}, \textbf{Software Development}, \textbf{Pytest}, \textbf{Linux}}
+        \resumeItem{}
+          {After successful completion of the project, I was compensated with \textbf{\$3000}}
       \resumeItemListEnd
-
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------------
 \section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{Mapping Virtual 3D Objects Onto the Face}
-      {An attempt at reducing the time complexity of facial augmented reality algorithms by reducing the number of contour points used to detect orientation of the face.}
-    \resumeSubItem{SSN Code Busters}
-      {An online programming judge and platform developed using SQLite-Django-Bootstrap.}
+    \resumeSubItem{Homelab - Proxmox \& Infra}
+      {Started to host my own data center using \textbf{Proxmox Virtualization Environment} in my home, as a hobby, and it already has few services running using \textbf{LXD (LXC) containers}, and couple of \textbf{VMs}. \\
+      Looking forward to move existing LXD containers to Incus containers. Currently I host photo backup service, music server, file server, home network monitoring service and more yet to host\\
+      Maintaining IaC code in \textbf{Terraform} and \textbf{Ansible} to setup my infrastructure and create VMs or LXD containers on the fly\\
+      With this side project, I learnt fundamentals of \textbf{Computer Networking} and I started to realise how important networking is}
+    \resumeSubItem{ips - Print IP address of all interfaces of host - CLI}
+      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool}
+    \resumeSubItem{velocity - A fast file executer}
+      {A CLI tool that watches for any files changes, and when there are changes, then velocity will execute the file using the runtime required as per the file extension and shows the output in the console. Used \textbf{NodeJS} to build this tool and supports \textbf{C, C++, Java, Python, Go} languages so far}
   \resumeSubHeadingListEnd
 
-%-------PUBLICATIONS------------------  
-\section{Publications}
- \resumeSubHeadingListStart
-  \resumeSubItem{}{Dr.T Shree Sharmila, Hemang Shah and Aadhithya Dinesh,
-  \textbf{Analysis of facial landmark features to determine the best subset for finding facial orientation}, 2nd IEEE International Conference on Computational Intelligence in Data Science, (ICCIDS), February 21 – 23, 2019.}
- \resumeSubHeadingListEnd
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Sri Venkateswara college of Engineering and Technology}{Chittoor, Andhra Pradesh}
+      {Bachelors of Technology in Computer Science and Engineering;  CGPA: 7.4/10}{August 2019 - April 2023}
+  \resumeSubHeadingListEnd
 
-%---------------------------------------
-\section{Accomplishments}
- \resumeSubHeadingListStart
- \resumeSubItem{}{
-    \textbf{Finalist}{ - SSN Best Speaker Contest} {,2017 and 2018.}
-    }
-    \resumeSubItem{}{
-    \textbf{Sanction Letter}{ - College Funded Project}{, SSN Code Busters, 2016. }
-    }
-    \resumeSubItem{}{
-    \textbf{Placed 8th}{ - Shaastra Programming Contest Finals IIT Madras, 2016.}
-    }
-    \resumeSubItem{}{
-    \textbf{Winner}{ - Inter College Math Quiz(SSN 2klog16), 2016.}
-    }
-    
- \resumeSubHeadingListEnd
-%-------------------------------------
-%---------Teaching/Leadership Experience-------
-\section{Teaching/Leadership Experience}
- \resumeSubHeadingListStart
-  \resumeSubItem{}{Conducted an IEEE Workshop on Basics of Web Development and Trends in Web Technology for college students (Jan 2018).}
-  \resumeSubItem{}{Part of the core IT Department Coding Club (2017-2018).}
-  \resumeSubItem{}{Taught Maths, Science and Music for underprivileged school kids as part of the Sri Sathya Sai Seva Organization.}
- \resumeSubHeadingListEnd
+% %-------PUBLICATIONS------------------  
+% \section{Publications}
+%  \resumeSubHeadingListStart
+%   \resumeSubItem{}{Dr.T Shree Sharmila, Hemang Shah and Aadhithya Dinesh,
+%   \textbf{Analysis of facial landmark features to determine the best subset for finding facial orientation}, 2nd IEEE International Conference on Computational Intelligence in Data Science, (ICCIDS), February 21 – 23, 2019.}
+%  \resumeSubHeadingListEnd
+%
+% %---------------------------------------
+% \section{Accomplishments}
+%  \resumeSubHeadingListStart
+%  \resumeSubItem{}{
+%     \textbf{Finalist}{ - SSN Best Speaker Contest} {,2017 and 2018.}
+%     }
+%     \resumeSubItem{}{
+%     \textbf{Sanction Letter}{ - College Funded Project}{, SSN Code Busters, 2016. }
+%     }
+%     \resumeSubItem{}{
+%     \textbf{Placed 8th}{ - Shaastra Programming Contest Finals IIT Madras, 2016.}
+%     }
+%     \resumeSubItem{}{
+%     \textbf{Winner}{ - Inter College Math Quiz(SSN 2klog16), 2016.}
+%     }
+%     
+%  \resumeSubHeadingListEnd
+% %-------------------------------------
+% %---------Teaching/Leadership Experience-------
+% \section{Teaching/Leadership Experience}
+%  \resumeSubHeadingListStart
+%   \resumeSubItem{}{Conducted an IEEE Workshop on Basics of Web Development and Trends in Web Technology for college students (Jan 2018).}
+%   \resumeSubItem{}{Part of the core IT Department Coding Club (2017-2018).}
+%   \resumeSubItem{}{Taught Maths, Science and Music for underprivileged school kids as part of the Sri Sathya Sai Seva Organization.}
+%  \resumeSubHeadingListEnd
 \end{document}
 

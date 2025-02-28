@@ -1,11 +1,7 @@
-version: '3'
 services:
   latex:
     build: .
     volumes:
-      - .:/app
-    ports:
-      - "8000:8000"
-    command: >
-      sh -c "latexmk -pvc -pdf resume.tex -view=none & \
-            python -m http.server 8000 --directory ."
+      - .:/project
+    working_dir: /project
+    command: /usr/local/bin/start.sh

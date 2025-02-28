@@ -1,0 +1,55 @@
+name: Build and Tag Resume
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch all history to allow for ref calculation
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build LaTeX environment
+      run: docker-compose build
+
+    - name: Compile Resume
+      # Use `docker-compose run` to execute commands inside the container
+      run: docker-compose run latex bash -c 'latexmk -pdf -file-line-error -interaction=nonstopmode -synctex=1 resume.tex'
+
+    - name: Create Release and Upload PDF (Manual Tagging)
+      if: startsWith(github.ref, 'refs/tags/')  # Only runs on tag pushes
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+      
+    - name: Upload PDF as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: resume.pdf
+        path: resume.pdf
+
+    - name: Setup Git Config  # Needed for auto-tagging
+      if: "!startsWith(github.ref, 'refs/tags/')"  # Only if not a tag push
+      run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+    - name: Auto-Tag and Push (Automatic Tagging - Simplified)
+      if: "!startsWith(github.ref, 'refs/tags/')"   # Only run if not already a tag push
+      run: |
+           git tag -a "v$(date +'%Y%m%d%H%M%S')" -m "Automated tag $(date +'%Y-%m-%d %H:%M:%S')"
+           git push origin --tags
