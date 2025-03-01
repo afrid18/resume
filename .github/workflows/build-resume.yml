@@ -3,17 +3,20 @@ name: Build and Tag Resume
 on:
   push:
     tags:
-      - '*'  # Trigger on any tag
+      - '*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        fetch-depth: 0  # Needed to get tag information
+        fetch-depth: 0
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
@@ -35,7 +38,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref_name }}  # Use github.ref_name
+        tag_name: ${{ github.ref_name }}
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
