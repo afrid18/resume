@@ -33,7 +33,8 @@ jobs:
     - name: Compile Resume
       run: docker-compose run latex bash -c 'latexmk -pdf -file-line-error -interaction=nonstopmode -synctex=1 resume.tex'
 
-    - name: Create Release and Upload PDF
+    - name: Create Release
+      id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,6 +43,16 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
+
+    - name: Upload PDF to Release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # Correct URL
+        asset_path: ./resume.pdf
+        asset_name: resume.pdf
+        asset_content_type: application/pdf
 
     - name: Upload PDF as Artifact
       uses: actions/upload-artifact@v4
