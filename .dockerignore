@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.pdf
+texput.log
+xdocker-compose.yml
+.git
+.github
