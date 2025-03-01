@@ -2,8 +2,8 @@ name: Build and Tag Resume
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'  # Trigger on any tag
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        fetch-depth: 0
+        fetch-depth: 0  # Needed to get tag information
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
@@ -30,14 +30,13 @@ jobs:
     - name: Compile Resume
       run: docker-compose run latex bash -c 'latexmk -pdf -file-line-error -interaction=nonstopmode -synctex=1 resume.tex'
 
-    - name: Create Release and Upload PDF (Manual Tagging ONLY)
-      if: startsWith(github.ref, 'refs/tags/')
+    - name: Create Release and Upload PDF
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}  # Use github.ref_name
+        release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
 
