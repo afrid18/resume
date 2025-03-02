@@ -156,17 +156,28 @@
 
 %-----------PROJECTS-----------------
 \section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{Homelab - Proxmox \& Infra}
-      {Started to host my own data center using \textbf{Proxmox Virtualization Environment} in my home, as a hobby, and it already has few services running using \textbf{LXD (LXC) containers}, and couple of \textbf{VMs}. \\
-      Looking forward to move existing LXD containers to Incus containers. Currently I host photo backup service, music server, file server, home network monitoring service and more yet to host\\
-      Maintaining IaC code in \textbf{Terraform} and \textbf{Ansible} to setup my infrastructure and create VMs or LXD containers on the fly\\
-      With this side project, I learnt fundamentals of \textbf{Computer Networking} and I started to realise how important networking is}
-    \resumeSubItem{ips - Print IP address of all interfaces of host - CLI}
-      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool}
-    \resumeSubItem{velocity - A fast file executer}
-      {A CLI tool that watches for any files changes, and when there are changes, then velocity will execute the file using the runtime required as per the file extension and shows the output in the console. Used \textbf{NodeJS} to build this tool and supports \textbf{C, C++, Java, Python, Go} languages so far}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+  \resumeSubItem{Homelab - Proxmox \& Infrastructure Management}
+    {\resumeItemListStart
+      \resumeItem{}
+        {Built a personal data center using \textbf{Proxmox}, which is hosting services through \textbf{LXD containers} and \textbf{VMs}}
+      \resumeItem{}
+        {Developed \textbf{Infrastructure as Code} using \textbf{Terraform} and \textbf{Ansible} to provision and configure VMs automatically}
+      \resumeItem{}
+        {Gained experience with \textbf{Computer Networking}, including VLAN setup, firewall configuration, and network segmentation}
+    \resumeItemListEnd}
+  
+    \resumeSubItem{\href{https://www.github.com/afrid18/ips}{\textcolor{black}{ips}} - Print IP address of all interfaces of host - CLI}
+      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool, find \href{https://www.github.com/afrid18/ips}{\textcolor{black}{here}}}
+  
+  \resumeSubItem{\href{https://www.github.com/afrid18/velocity}{\textcolor{black}{velocity}} - Fast File Execution Watcher}
+    {\resumeItemListStart
+      \resumeItem{}
+        {Built a file-watching utility in \textbf{NodeJS} that automatically executes changed files based on their extension}
+      \resumeItem{}
+        {Implemented support for \textbf{C, C++, Java, Python, and Go} with real-time output streaming to console}
+    \resumeItemListEnd}
+\resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Education}
