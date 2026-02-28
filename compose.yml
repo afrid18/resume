@@ -1,7 +1,10 @@
 services:
   latex:
     build: .
+    user: "${UID}:${GID}" # Maps container user to your local user
     volumes:
       - .:/project
     working_dir: /project
-    command: /usr/local/bin/start.sh
+    # Use 'sh -c' to ensure the build directory exists before latexmk starts
+    command: >
+      sh -c "mkdir -p build && /usr/local/bin/start.sh"
