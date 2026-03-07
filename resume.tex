@@ -1,10 +1,10 @@
 %-------------------------
 % Resume in Latex
-% Author : Sourabh Bajaj
+% Author : Afrid Hussain
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[a4paper,20pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -13,7 +13,7 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-% \usepackage[pdftex]{hyperref}
+% \usepackage[pdftex]{hyperref}     %%%%%% used custom colors for links, files and urls hence commentting it out
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{
     linkcolor = blue,
@@ -26,6 +26,7 @@
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
+\setlength{\footskip}{5pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -36,8 +37,8 @@
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
+% page styling
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
@@ -72,8 +73,9 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
+%---------------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------------------------------------------------
 
 
 \begin{document}
@@ -86,43 +88,66 @@
   \href{https://afrid.in/}{Website} & Mobile: +91-7032376276 \\
 \end{tabular*}
 
-%--------PROGRAMMING SKILLS------------
-% \section{Programming Skills}
-%  \resumeSubHeadingListStart
-%  \resumeSubItem{}{
-%      \textbf{Languages: }{Python, Javascript, Typescript, Go, Java, C++, SQL, NoSQL, HTML, CSS/SASS }
-%      }
-%  \resumeSubItem{}{
-% 	\textbf{Technologies and Frameworks: }{Linux System Administration, FastAPI(python), Blockchain  }
-%     }
-%  \resumeSubHeadingListEnd
+
+
+%--------Technical SKILLS------------
+\section{Technical Skills}
+
+\resumeSubHeadingListStart
+  \resumeSubItem{Cloud Platforms} {~~~~~~~~~~~~~~~~~~~~~~~~AWS (EKS, ECS Fargate, CDK, CodePipeline), Azure, GCP (GKE)}
+  \resumeSubItem{Container Orchestration} {~~~~~~~~~~~~~Kubernetes, K3S, Helm, Docker, Rancher Desktop}
+  \resumeSubItem{IaC \& GitOps} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~Terraform, ArgoCD, Kustomize}
+  \resumeSubItem{Monitoring \& Observability} {~~~~~~~~Prometheus, Grafana, Dynatrace, OpenTelemetry, SigNoz, Langfuse, CloudWatch}
+  \resumeSubItem{Security} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Trivy, Snyk, HashiCorp Vault}
+  \resumeSubItem{CI/CD} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GitHub Actions (Self-Hosted Runners), Jenkins, AWS CodePipeline}
+  \resumeSubItem{Programming} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Python, JavaScript, TypeScript, Go, Java, SQL}
+  \resumeSubItem{Database \& Messaging} {~~~~~~~~~~~~~~~MongoDB, PostgreSQL, Redis}
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Initvalue Technologies Private Limited}{Bangalore, Karnataka}
+    % Experience #1
+    \resumeSubheading{Initvalue Technologies Private Limited}{Bangalore, Karnataka}
       {DevOps Engineer (Infrastructure) - Full time}{April 2024 - Present}
       \resumeItemListStart
-        \resumeItem{}
-          {Managed \textbf{Docker containers} and configuration files for healthcare applications, ensuring consistent environments across development and production systems}
-        \resumeItem{}
-          {Created and maintained \textbf{CI/CD pipelines} using \textbf{GitHub Actions} to automate build, test, and deployment workflows for healthcare microservices}
-        \resumeItem{}
-          {Configured \textbf{Dynatrace} monitoring for \textbf{Kubernetes} applications, setting up dashboards and alerts to track system health and quickly identify potential issues}
-        \resumeItem{}
-          {Implemented \textbf{infrastructure as code} using \textbf{Terraform} and \textbf{Ansible} to provision and configure \textbf{AWS} resources, enabling repeatable deployments}
-        \resumeItem{}
-          {Optimized \textbf{Cloudflare} configurations for improved application security and performance, implementing \textbf{WAF rules} to protect against common threats}
-        \resumeItem{}
-          {Automated routine maintenance tasks with \textbf{Python scripts} and \textbf{CRON jobs}, reducing manual intervention and improving overall system reliability}
-        \resumeItem{}
-          {Provided on-call support during deployment windows, troubleshooting infrastructure and application issues to maintain service availability}
-        \resumeItem{}
-          {Created comprehensive documentation and conducted knowledge-sharing sessions on \textbf{DevOps best practices} for development and operations teams}
+        \resumeItem{Infrastructure Ownership:}
+          {Took full ownership of \textbf{3 production services} — handling infra setup, 
+          on-call incidents, biweekly deployments, and hot-fixes across dev, staging, 
+          and production \textbf{Kubernetes} clusters on \textbf{AWS}.}
+        \resumeItem{Shift-Left Security:}
+          {Integrated \textbf{Trivy} container scans and \textbf{Snyk} static analysis 
+          into \textbf{GitHub Actions} CI pipelines, catching \textbf{95\%} of security 
+          issues before they reached production.}
+        \resumeItem{Cloud Infrastructure:}
+          {Provisioned production-ready \textbf{EKS} clusters on \textbf{AWS} using 
+          \textbf{Terraform}, ensuring \textbf{100\%} environment consistency across 
+          all stages — eliminating manual setup and reducing cluster provisioning 
+          time by \textbf{60\%}.}
+        \resumeItem{CI Migration:}
+          {Migrated CI pipelines for \textbf{50+ microservices} from \textbf{Jenkins} 
+          to \textbf{GitHub Actions} with self-hosted runners, cutting build and 
+          validation time from \textbf{25 minutes to 14 minutes}.}
+        \resumeItem{GitOps:}
+          {Managed application deployments using \textbf{ArgoCD}, \textbf{Helm}, and 
+          \textbf{Kustomize} — reducing total config files by \textbf{37\%} and 
+          enabling clean, auditable rollouts with easy rollback on failure.}
+        \resumeItem{Monitoring \& Observability:}
+          {Maintained \textbf{Dynatrace} APM for production services alongside 
+          \textbf{Prometheus} and \textbf{Grafana} for cluster-level metrics — 
+          cutting incident detection and resolution time by \textbf{40\%}.}
+        \resumeItem{Secrets Management:}
+              {Integrated \textbf{HashiCorp Vault} for runtime secret injection across all 
+              Kubernetes workloads, removing hardcoded credentials from all pipelines 
+              and config files.}
+        \resumeItem{Cost \& Reliability:}
+          {Automated backup pipelines for \textbf{PostgreSQL} and \textbf{Redis} 
+          to \textbf{S3} with recovery under \textbf{30 minutes}, and wrote 
+          \textbf{Python} scripts to clean stale images and unused \textbf{EBS 
+          snapshots} — reducing monthly storage costs by \textbf{15\%}.}
       \resumeItemListEnd
 
+    % Experience #2
     \resumeSubheading
       {Cognizant Technologies}{Coimbatore, Tamilnadu}
       {Software Developer Intern}{Dec 2023 - Apr 2024}
@@ -137,6 +162,7 @@
           {Collaborated with senior engineers in Agile sprints, contributing to continuous integration and delivery pipelines.}
       \resumeItemListEnd
 
+    % Experience #3
     \resumeSubheading
       {Google Summer of Code - OpenSUSE}{Remote}
       {Open source mentorship}{May 2023 - Sep 2023}
@@ -168,7 +194,7 @@
     \resumeItemListEnd}
   
     \resumeSubItem{\href{https://www.github.com/afrid18/ips}{\textcolor{black}{ips}} - Print IP address of all interfaces of host - CLI}
-      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool, find \href{https://www.github.com/afrid18/ips}{\textcolor{black}{here}}}
+      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool, find \href{https://www.github.com/afrid18/ips}{here}}
   
   \resumeSubItem{\href{https://www.github.com/afrid18/velocity}{\textcolor{black}{velocity}} - Fast File Execution Watcher}
     {\resumeItemListStart
