@@ -1,6 +1,7 @@
-%-------------------------
-% Resume in Latex
+%------------------------
+% Resume Template
 % Author : Afrid Hussain
+% Github : https://github.com/afrid18
 % License : MIT
 %------------------------
 
@@ -13,46 +14,44 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-% \usepackage[pdftex]{hyperref}     %%%%%% used custom colors for links, files and urls hence commentting it out
-\usepackage[colorlinks=true]{hyperref}
-\hypersetup{
-    linkcolor = blue,
-    filecolor = magenta,
-    urlcolor = blue,
-}
+\usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
-\setlength{\footskip}{5pt}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\oddsidemargin}{-0.530in}
 \addtolength{\evensidemargin}{-0.375in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
 
-% page styling
-\urlstyle{same}
+\urlstyle{rm}
+
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
   \item\small{
-    \textbf{#1}{ #2 \vspace{-2pt}}
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
   }
 }
 
@@ -60,11 +59,12 @@
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textit{#3} & \textit{#4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -73,177 +73,144 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%---------------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%---------------------------------------------------
-
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
 
 \begin{document}
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\Large Afrid Hussain}} & Email: afridhussain.d@gmail.com \\
-  \href{https://www.linkedin.com/in/afridhussain/}{LinkedIn} $\cdot$
-  \href{https://github.com/afrid18/}{GitHub} $\cdot$
-  \href{https://afrid.in/}{Website} & Mobile: +91-7032376276 \\
+  \textbf{{\LARGE Afrid Hussain}} & Email: \href{mailto:}{afridhussain.d@gmail.com}\\
+  \href{https://afrid.in}{Portfolio: afrid.in} & Mobile:~~~+91-703-2376-276 \\
+  \href{https://github.com/afrid18}{Github: ~~github.com/afrid18} \\
 \end{tabular*}
-
-
+\vspace{-5pt}
 
 %--------Technical SKILLS------------
 \section{Technical Skills}
 
 \resumeSubHeadingListStart
-  \resumeSubItem{Cloud Platforms} {~~~~~~~~~~~~~~~~~~~~~~~~AWS (EKS, ECS Fargate, CDK, CodePipeline), Azure, GCP (GKE)}
-  \resumeSubItem{Container Orchestration} {~~~~~~~~~~~~~Kubernetes, K3S, Helm, Docker, Rancher Desktop}
-  \resumeSubItem{IaC \& GitOps} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~Terraform, ArgoCD, Kustomize}
-  \resumeSubItem{Monitoring \& Observability} {~~~~~~~~Prometheus, Grafana, Dynatrace, OpenTelemetry, SigNoz, Langfuse, CloudWatch}
-  \resumeSubItem{Security} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Trivy, Snyk, HashiCorp Vault}
-  \resumeSubItem{CI/CD} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GitHub Actions (Self-Hosted Runners), Jenkins, AWS CodePipeline}
-  \resumeSubItem{Programming} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Python, JavaScript, TypeScript, Go, Java, SQL}
-  \resumeSubItem{Database \& Messaging} {~~~~~~~~~~~~~~~MongoDB, PostgreSQL, Redis}
+\resumeSubItem{Cloud Platforms} {~~~~~~~~~~~~~~~~~~~~~~~~AWS (EKS, ECS Fargate, CDK, CodePipeline), Azure, GCP (GKE)}
+\resumeSubItem{Container Orchestration} {~~~~~~~~~~~~~Kubernetes, K3S, Helm, Docker, Rancher Desktop}
+\resumeSubItem{IaC \& GitOps} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~Terraform, ArgoCD, Kustomize}
+\resumeSubItem{Monitoring \& Observability} {~~~~~~~~Prometheus, Grafana, Dynatrace, OpenTelemetry, SigNoz, Langfuse, CloudWatch}
+\resumeSubItem{Security} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Trivy, Snyk, HashiCorp Vault}
+\resumeSubItem{CI/CD} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GitHub Actions (Self-Hosted Runners), Jenkins, AWS CodePipeline}
+\resumeSubItem{Programming} {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Python, JavaScript, TypeScript, Go, Java, SQL}
+\resumeSubItem{Database \& Messaging} {~~~~~~~~~~~~~~~MongoDB, PostgreSQL, Redis}
 \resumeSubHeadingListEnd
+\vspace{-5pt}
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
-  \resumeSubHeadingListStart
-    % Experience #1
-    \resumeSubheading{Initvalue Technologies Private Limited}{Bangalore, Karnataka}
-      {DevOps Engineer (Infrastructure) - Full time}{April 2024 - Present}
-      \resumeItemListStart
-        \resumeItem{Infrastructure Ownership:}
-          {Took full ownership of \textbf{3 production services} — handling infra setup, 
-          on-call incidents, biweekly deployments, and hot-fixes across dev, staging, 
-          and production \textbf{Kubernetes} clusters on \textbf{AWS}.}
-        \resumeItem{Shift-Left Security:}
-          {Integrated \textbf{Trivy} container scans and \textbf{Snyk} static analysis 
-          into \textbf{GitHub Actions} CI pipelines, catching \textbf{95\%} of security 
-          issues before they reached production.}
-        \resumeItem{Cloud Infrastructure:}
-          {Provisioned production-ready \textbf{EKS} clusters on \textbf{AWS} using 
-          \textbf{Terraform}, ensuring \textbf{100\%} environment consistency across 
-          all stages — eliminating manual setup and reducing cluster provisioning 
-          time by \textbf{60\%}.}
-        \resumeItem{CI Migration:}
-          {Migrated CI pipelines for \textbf{50+ microservices} from \textbf{Jenkins} 
-          to \textbf{GitHub Actions} with self-hosted runners, cutting build and 
-          validation time from \textbf{25 minutes to 14 minutes}.}
-        \resumeItem{GitOps:}
-          {Managed application deployments using \textbf{ArgoCD}, \textbf{Helm}, and 
-          \textbf{Kustomize} — reducing total config files by \textbf{37\%} and 
-          enabling clean, auditable rollouts with easy rollback on failure.}
-        \resumeItem{Monitoring \& Observability:}
-          {Maintained \textbf{Dynatrace} APM for production services alongside 
-          \textbf{Prometheus} and \textbf{Grafana} for cluster-level metrics — 
-          cutting incident detection and resolution time by \textbf{40\%}.}
-        \resumeItem{Secrets Management:}
-              {Integrated \textbf{HashiCorp Vault} for runtime secret injection across all 
-              Kubernetes workloads, removing hardcoded credentials from all pipelines 
-              and config files.}
-        \resumeItem{Cost \& Reliability:}
-          {Automated backup pipelines for \textbf{PostgreSQL} and \textbf{Redis} 
-          to \textbf{S3} with recovery under \textbf{30 minutes}, and wrote 
-          \textbf{Python} scripts to clean stale images and unused \textbf{EBS 
-          snapshots} — reducing monthly storage costs by \textbf{15\%}.}
-      \resumeItemListEnd
+\resumeSubHeadingListStart
+% Experience #1
+\resumeSubheading{Initvalue Technologies Private Limited}{Bangalore, Karnataka}
+{DevOps Engineer (Infrastructure) - Full time}{April 2024 - Present}
+\resumeItemListStart
+\resumeItem{Infrastructure Ownership}
+{Took full ownership of \textbf{3 production services} — handling infra setup,
+  on-call incidents, biweekly deployments, and hot-fixes across dev, staging,
+  and production \textbf{Kubernetes} clusters on \textbf{AWS}.}
+\resumeItem{Shift-Left Security}
+{Integrated \textbf{Trivy} container scans and \textbf{Snyk} static analysis
+  into \textbf{GitHub Actions} CI pipelines, catching \textbf{95\%} of security
+  issues before they reached production.}
+\resumeItem{Cloud Infrastructure}
+{Provisioned production-ready \textbf{EKS} clusters on \textbf{AWS} using
+  \textbf{Terraform}, ensuring \textbf{100\%} environment consistency across
+  all stages — eliminating manual setup and reducing cluster provisioning
+  time by \textbf{60\%}.}
+\resumeItem{CI Migration}
+{Migrated CI pipelines for \textbf{50+ microservices} from \textbf{Jenkins}
+  to \textbf{GitHub Actions} with self-hosted runners, cutting build and
+  validation time from \textbf{25 minutes to 14 minutes}.}
+\resumeItem{GitOps}
+{Managed application deployments using \textbf{ArgoCD}, \textbf{Helm}, and
+  \textbf{Kustomize} — reducing total config files by \textbf{37\%} and
+  enabling clean, auditable rollouts with easy rollback on failure.}
+\resumeItem{Monitoring \& Observability}
+{Maintained \textbf{Dynatrace} APM for production services alongside
+  \textbf{Prometheus} and \textbf{Grafana} for cluster-level metrics —
+  cutting incident detection and resolution time by \textbf{40\%}.}
+\resumeItem{Secrets Management}
+{Integrated \textbf{HashiCorp Vault} for runtime secret injection across all
+  Kubernetes workloads, removing hardcoded credentials from all pipelines
+  and config files.}
+\resumeItem{Cost \& Reliability}
+{Automated backup pipelines for \textbf{PostgreSQL} and \textbf{Redis}
+  to \textbf{S3} with recovery under \textbf{30 minutes}, and wrote
+  \textbf{Python} scripts to clean stale images and unused \textbf{EBS
+    snapshots} — reducing monthly storage costs by \textbf{15\%}.}
+\resumeItemListEnd
+\vspace{-5pt}
 
-    % Experience #2
-    \resumeSubheading
-      {Cognizant Technologies}{Coimbatore, Tamilnadu}
-      {Software Developer Intern}{Dec 2023 - Apr 2024}
-      \resumeItemListStart
-        \resumeItem{}
-          {Configured \textbf{CloudWatch} alerts for CPU utilization and memory, promptly addressing critical performance issues}
-        \resumeItem{}
-          {Deployed and managed EC2 instances in AWS, enhancing application performance for health-related services.}
-        \resumeItem{}
-          {collaborated in troubleshooting application deployments, contributing to resolve infrastructure issues}
-        \resumeItem{}
-          {Collaborated with senior engineers in Agile sprints, contributing to continuous integration and delivery pipelines.}
-      \resumeItemListEnd
+% Experience #2
+\resumeSubheading
+{Cognizant Technologies}{Coimbatore, Tamil Nadu}
+{Trainee Software Engineer}{Dec 2023 - Apr 2024}
+\resumeItemListStart
+\resumeItem{Containerization \& Local Environments}
+{Containerized legacy healthcare microservices using \textbf{Docker} and
+  orchestrated local development environments with \textbf{Docker Compose},
+  eliminating "works-on-my-machine" errors and reducing developer onboarding
+  time.}
+\resumeItem{Cloud Infrastructure \& Provisioning}
+{Provisioned and managed \textbf{AWS EC2} auto-scaling groups for staging
+  environments, right-sizing instance types to balance application performance
+  with cloud compute costs.}
+\resumeItem{Observability \& Incident Management}
+{Designed centralized monitoring dashboards using \textbf{AWS CloudWatch},
+  configuring custom metric alarms for CPU/Memory spikes that reduced mean
+  time to detection (MTTD) for infrastructure bottlenecks.}
+\resumeItem{CI/CD Pipeline Maintenance}
+{Collaborated in Agile sprints to troubleshoot and optimize \textbf{Linux}
+  -based continuous integration pipelines, writing \textbf{Bash} scripts to
+  automate routine testing and artifact builds before deployment.}
+\resumeItemListEnd
 
-    % Experience #3
-    \resumeSubheading
-      {Google Summer of Code - OpenSUSE}{Remote}
-      {Open source mentorship}{May 2023 - Sep 2023}
-      \resumeItemListStart
-        \resumeItem{}
-          {Improved test suite for testing \href{https://github.com/rpm-software-management/rpmlint}{rpmlint repository} using pytest. Spent nearly 400+ hours on the project, with regular meetings with the mentor. Refer \href{https://summerofcode.withgoogle.com/archive/2023/projects/WxqvIPZs}{here} for more information about the project}
-        \resumeItem{}
-          {Designed a mocking framework which will help eliminate rpm binary files used the project just for unit testing}
-        \resumeItem{}
-          {Over \textbf{20+ rpm binary files} have been mocked using the framework I designed, using the same framework we can eliminate almost 90\% of existing binary packages, which is left for upcoming improvements}
-        \resumeItem{}
-          {Working organization is \href{https://opensuse.org/}{OpenSUSE}, SKILLS: \textbf{Python}, \textbf{Testing}, \textbf{Software Development}, \textbf{Pytest}, \textbf{Linux}}
-        \resumeItem{}
-          {After successful completion of the project, I was compensated with \textbf{\$3000}}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+% Experience #3
+\resumeSubheading
+{\href{https://summerofcode.withgoogle.com/archive/2023/projects/WxqvIPZs}
+  {Google Summer of Code - openSUSE}}{Remote}
+{Open Source Mentee $|$ \emph{Python, Pytest, Linux, RPM}}{May 2023 - Sep 2023}
+\resumeItemListStart
+\resumeItem{Test Suite Optimization}
+{Overhauled the \href{https://github.com/rpm-software-management/rpmlint}
+  {\textbf{rpmlint}} testing infrastructure using \textbf{Pytest} during a
+  rigorous 400+ hour mentorship program.}
+\resumeItem{Custom Mocking Framework}
+{Architected a \textbf{Python}-based mocking framework to simulate package
+  behaviors, completely removing the reliance on static binary files for unit
+  testing.}
+\resumeItem{Technical Impact}
+{Successfully mocked \textbf{20+ legacy RPM binaries}, establishing a scalable
+  pattern projected to eliminate \textbf{90\%} of existing binary test
+  dependencies.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-5pt}
 
 %-----------PROJECTS-----------------
+\vspace{-5pt}
 \section{Projects}
 \resumeSubHeadingListStart
-  \resumeSubItem{Homelab - Proxmox \& Infrastructure Management}
-    {\resumeItemListStart
-      \resumeItem{}
-        {Built a personal data center using \textbf{Proxmox}, which is hosting services through \textbf{LXD containers} and \textbf{VMs}}
-      \resumeItem{}
-        {Developed \textbf{Infrastructure as Code} using \textbf{Terraform} and \textbf{Ansible} to provision and configure VMs automatically}
-      \resumeItem{}
-        {Gained experience with \textbf{Computer Networking}, including VLAN setup, firewall configuration, and network segmentation}
-    \resumeItemListEnd}
-  
-    \resumeSubItem{\href{https://www.github.com/afrid18/ips}{\textcolor{black}{ips}} - Print IP address of all interfaces of host - CLI}
-      {Built a CLI tool that can print all the IP address associated with all the network interfaces of the host machine, used \textbf{Go Programming} language to build this tool, find \href{https://www.github.com/afrid18/ips}{here}}
-  
-  \resumeSubItem{\href{https://www.github.com/afrid18/velocity}{\textcolor{black}{velocity}} - Fast File Execution Watcher}
-    {\resumeItemListStart
-      \resumeItem{}
-        {Built a file-watching utility in \textbf{NodeJS} that automatically executes changed files based on their extension}
-      \resumeItem{}
-        {Implemented support for \textbf{C, C++, Java, Python, and Go} with real-time output streaming to console}
-    \resumeItemListEnd}
+\resumeSubItem{Homelab Infrastructure \& Automation $|$ \emph{Proxmox, Terraform, Ansible, LXC, ZFS}}  {Architected a secure \textbf{Proxmox VE} cluster backed by \textbf{ZFS}, automating \textbf{LXC/VM} provisioning via \textbf{Terraform} and \textbf{Ansible} while segmenting network traffic using \textbf{VLANs} and \textbf{Tailscale}.}
+\vspace{2pt}
+\resumeSubItem{\href{https://www.github.com/afrid18/ips}{\textcolor{black}{\textbf{ips}}} $|$ \emph{Network Interface CLI Utility (Go)}}{Engineered a \textbf{Go} CLI to parse and display IPv4/IPv6 interface addresses for rapid diagnostics.}
+\vspace{2pt}
+\resumeSubItem{\href{https://www.github.com/afrid18/velocity}{\textcolor{black}{\textbf{velocity}}} $|$ \emph{Event-Driven Execution Watcher (Node.js)}}{Built a \textbf{Node.js} CLI using file events to instantly recompile and execute modified scripts. Managed child processes to stream real-time console feedback for \textbf{C, C++, Java, Python, and Go}.}
 \resumeSubHeadingListEnd
+\vspace{-5pt}
 
 %-----------EDUCATION-----------------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Sri Venkateswara college of Engineering and Technology}{Chittoor, Andhra Pradesh}
-      {Bachelors of Technology in Computer Science and Engineering;  CGPA: 7.4/10}{August 2019 - April 2023}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+{Sri Venkateswara College of Engineering and Technology}{Chittoor, India}
+{Bachelor of Technology - Computer Science;  GPA: 7.04}{August 2019 - April 2023}
+{\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:} Operating Systems, Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases}}}
+\resumeSubHeadingListEnd
+\vspace{-5pt}
 
-% %-------PUBLICATIONS------------------  
-% \section{Publications}
-%  \resumeSubHeadingListStart
-%   \resumeSubItem{}{Dr.T Shree Sharmila, Hemang Shah and Aadhithya Dinesh,
-%   \textbf{Analysis of facial landmark features to determine the best subset for finding facial orientation}, 2nd IEEE International Conference on Computational Intelligence in Data Science, (ICCIDS), February 21 – 23, 2019.}
-%  \resumeSubHeadingListEnd
-%
-% %---------------------------------------
-% \section{Accomplishments}
-%  \resumeSubHeadingListStart
-%  \resumeSubItem{}{
-%     \textbf{Finalist}{ - SSN Best Speaker Contest} {,2017 and 2018.}
-%     }
-%     \resumeSubItem{}{
-%     \textbf{Sanction Letter}{ - College Funded Project}{, SSN Code Busters, 2016. }
-%     }
-%     \resumeSubItem{}{
-%     \textbf{Placed 8th}{ - Shaastra Programming Contest Finals IIT Madras, 2016.}
-%     }
-%     \resumeSubItem{}{
-%     \textbf{Winner}{ - Inter College Math Quiz(SSN 2klog16), 2016.}
-%     }
-%     
-%  \resumeSubHeadingListEnd
-% %-------------------------------------
-% %---------Teaching/Leadership Experience-------
-% \section{Teaching/Leadership Experience}
-%  \resumeSubHeadingListStart
-%   \resumeSubItem{}{Conducted an IEEE Workshop on Basics of Web Development and Trends in Web Technology for college students (Jan 2018).}
-%   \resumeSubItem{}{Part of the core IT Department Coding Club (2017-2018).}
-%   \resumeSubItem{}{Taught Maths, Science and Music for underprivileged school kids as part of the Sri Sathya Sai Seva Organization.}
-%  \resumeSubHeadingListEnd
 \end{document}
-
